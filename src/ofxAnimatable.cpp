@@ -286,7 +286,7 @@ void ofxAnimatable::drawCurve(int x, int y, int size, bool bg, ofColor c ){
 	ofPushStyle();
 	if(bg){
 		ofSetColor(22);
-		ofRect(x, y, size, size);
+		ofDrawRectangle(x, y, size, size);
 	}
 	float steps = size;
 	string name = ofxAnimatable::getCurveName(*curveStylePtr_);
@@ -331,10 +331,10 @@ void ofxAnimatable::drawCurve(int x, int y, int size, bool bg, ofColor c ){
 
 	ofSetLineWidth(1);
 	ofSetColor(255,255); //axes
-	ofLine(xx,yy + s, xx + s, yy + s);
-	ofLine(xx,yy, xx, yy + s);
+	ofDrawLine(xx,yy + s, xx + s, yy + s);
+	ofDrawLine(xx,yy, xx, yy + s);
 	ofSetColor(255,32); //linear
-	ofLine(xx,yy + s, xx + s, yy );
+	ofDrawLine(xx,yy + s, xx + s, yy );
 	ofSetColor(170); //label
 	ofDrawBitmapString(name, x, y + s + 15);
 	ofPopStyle();
